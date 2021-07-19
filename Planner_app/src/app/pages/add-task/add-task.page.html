@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button></ion-menu-button>
+    <ion-title>Add a Task</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup] = "addTaskForm">
+
+  <ion-item>
+    <ion-label position="stacked">Name</ion-label>
+    <ion-input type= "text" placeholder="Name of Task" formControlName="name"></ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-label position="stacked">Description</ion-label>
+    <ion-input type= "text" placeholder="Description" formControlName="description"></ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-label position="stacked">Start Date</ion-label>
+    <ion-input type= "date" formControlName="date_of_start"></ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-label position="stacked">End Date</ion-label>
+    <ion-input type= "date" formControlName="date_of_end"></ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-label position="stacked">Status</ion-label>
+    <ion-select formControlName="status">
+      <ion-select-option value="Not Started">Not Started</ion-select-option>
+      <ion-select-option value="In Progress">In Progress</ion-select-option>
+      <ion-select-option value="Completed">Completed</ion-select-option>
+      </ion-select>
+  </ion-item> <br>
+
+  <div class="button"><ion-button (click)='onSubmit()' [disabled]="addTaskForm.invalid">Add Task</ion-button></div>
+
+</form>
+
+</ion-content>

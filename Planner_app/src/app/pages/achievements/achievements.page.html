@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button></ion-menu-button>
+    <ion-title>Achievements</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+ <ion-item>
+      <ion-label>Goals Achieved</ion-label>
+ </ion-item>
+
+  <ion-list *ngFor="let goal of goals">
+    <div *ngIf="goal.status == 'Completed'">
+
+  <ion-card color="success">
+    
+    <ion-card-content>
+      <h2>Name: {{goal.name}}</h2>
+      <h4>Description: {{goal.description}}</h4>
+    </ion-card-content>
+   
+  </ion-card>
+  </div>
+</ion-list>
+
+ <ion-item>
+      <ion-label>Completed Tasks</ion-label>
+ </ion-item>
+
+  <ion-list *ngFor="let task of tasks">
+    <div *ngIf="task.status == 'Completed'">
+
+  <ion-card color="secondary" class = "secondary">
+    
+    <ion-card-content>
+      <h2>Name: {{task.name}}</h2>
+      <h4>Description: {{task.description}}</h4>
+    </ion-card-content>
+   
+  </ion-card>
+  </div>
+</ion-list>

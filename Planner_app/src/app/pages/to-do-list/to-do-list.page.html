@@ -1,0 +1,39 @@
+
+
+<ion-header> 
+  <ion-toolbar><ion-menu-button></ion-menu-button>
+   
+    <ion-title>To-Do List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+ 
+  <ion-list *ngFor="let task of tasks">
+    <div *ngIf="task.status != 'Completed'">
+ 
+  <ion-item >
+    <ion-label>{{task.name}}</ion-label>
+    <ion-checkbox (click)="checkTask(task)" slot="start" ></ion-checkbox>
+  </ion-item>
+  <ion-card color="tertiary">
+  
+    <ion-card-content>
+      <h4>Description: {{task.description}}</h4>
+      <h4>Status: {{task.status}}</h4>
+      <h4>Due Date: {{task.date_of_end | date}}</h4>
+    </ion-card-content>
+   
+  </ion-card>
+  </div>
+</ion-list>
+
+
+<br>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button href="add-task">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+</ion-content>

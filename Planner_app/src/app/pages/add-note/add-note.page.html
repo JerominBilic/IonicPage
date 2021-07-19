@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button></ion-menu-button>
+    <ion-title>Add a Note</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup] = "addNoteForm">
+
+  <ion-item>
+    <ion-label position="stacked">Name</ion-label>
+    <ion-input type= "text" placeholder="Name of Note" formControlName="name"></ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-label position="stacked">Description</ion-label>
+    <ion-input type= "text" placeholder="Details" formControlName="details"></ion-input>
+  </ion-item> 
+  <ion-item>
+    <ion-label position="stacked">Importance</ion-label>
+    <ion-select formControlName="importance">
+      <ion-select-option value="Low">Low</ion-select-option>
+      <ion-select-option value="Medium">Medium</ion-select-option>
+      <ion-select-option value="High">High</ion-select-option>
+      </ion-select>
+  </ion-item> <br>
+
+  <div class="button"><ion-button (click)='onSubmit()' [disabled]="addNoteForm.invalid">Add Goal</ion-button></div>
+
+</form>
+
+</ion-content>
+

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button></ion-menu-button>
+    <ion-title>Goals</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+ 
+  <ion-list *ngFor="let goal of goals">
+    <div *ngIf="goal.status != 'Completed'">
+ 
+  <ion-item >
+    <ion-label>{{goal.name}}</ion-label>
+    <ion-checkbox (click)="checkGoal(goal)" slot="start" ></ion-checkbox>
+  </ion-item>
+  <ion-card color="tertiary">
+  
+    <ion-card-content>
+      <h4>Description: {{goal.description}}</h4>
+      <h4>Status: {{goal.status}}</h4>
+      <h4>Due Date: {{goal.date_of_end | date}}</h4>
+    </ion-card-content>
+   
+  </ion-card>
+  </div>
+</ion-list>
+
+
+<br>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button href="add-goal">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<!--<div class = "button"><ion-button href="add-goal">Add a new goal</ion-button></div>-->
+
+</ion-content>

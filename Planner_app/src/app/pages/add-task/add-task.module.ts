@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FolderPageRoutingModule } from './folder-routing.module';
+import { AddTaskPageRoutingModule } from './add-task-routing.module';
 
-import { FolderPage } from './folder.page';
+import { AddTaskPage } from './add-task.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule, 
+    AddTaskPageRoutingModule, 
     ReactiveFormsModule
   ],
-  declarations: [FolderPage]
+  declarations: [AddTaskPage]
 })
-export class FolderPageModule {}
+export class AddTaskPageModule {}

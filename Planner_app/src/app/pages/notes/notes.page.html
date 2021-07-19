@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button></ion-menu-button>
+    <ion-title>Notes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+ 
+  <ion-list *ngFor="let note of notes">
+   
+  <ion-card color="light">
+  
+    <ion-card-content>
+      <ion-label>{{note.name}}</ion-label>
+      <h4>Description: {{note.details}}</h4>
+      <h4>Importance: {{note.importance}}</h4>
+    </ion-card-content>
+  </ion-card>
+
+</ion-list>
+
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button href="add-note">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+</ion-content>
